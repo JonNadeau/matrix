@@ -1,16 +1,18 @@
 #include <iostream>
 using namespace std;
 
-void swapRows(int matrix[][], int numCols);//(r1,r2)={1-numRows}
-void scalarRow(int matrix[][], int numCols);
-void addRows(int matrix[][], int numCols);
+//void swapRows(int matrix[][], int numCols);//(r1,r2)={1-numRows}
+//void scalarRow(int matrix[][], int numCols);
+//void addRows(int matrix[][], int numCols);
 void printMatrix(int matrix[][], int numRows, int numCols);
+//int[][] enterMatrix();
+//int menu();
 
 main(){
 	int r,c;
 	cout<<"Enter matrix dimensions (Rows x Columns):"<<endl;
 	cin>>r>>c;
-	int matrix[r][c];
+	int matrix[r][c] = new int[r][c];
 	for(int i=0; i<r; i++){
 		for(int j=0; j<c; j++){
 			cout<<"Enter number for element "<<i+1<<", "<<j+1<<endl;
@@ -21,9 +23,10 @@ main(){
 	int columns=sizeof(matrix[0])/sizeof(int);//=c
 	int rows=sizeof(matrix)/sizeof(matrix[0]);//=r
 	cout<<"Rows: "<<rows<<endl<<"Columns: "<<columns<<endl;
-	swapRows(matrix, c);
-	printMatrix(matrix, r, c);
+//	scalarRows(matrix, c);
+//	printMatrix(matrix, r, c);
 }
+
 void printMatrix(int matrix[][], int numRows, int numCols){
 
 	cout<<"MATRIX:"<<endl;
@@ -35,7 +38,7 @@ void printMatrix(int matrix[][], int numRows, int numCols){
 		cout<<endl;
 	}
 }
-
+/*
 void swapRows(int matrix[][], int numCols){
 	cout<<"Inside swapRows"<<sizeof(matrix)<<endl;
 	int r1, r2, temp[numCols];
@@ -59,7 +62,7 @@ void scalarRow(int matrix[][], int numCols){
 	cout<<"Enter scalar:"<<endl;
 	cin>>s;
 	for(int i=0; i<numCols; i++){
-		matrix[r][i]*=s;
+		matrix[r-1][i]*=s;
 	}
 }
 
@@ -76,3 +79,17 @@ void addRows(int matrix[][], int numCols){
 		matrix[rfinal][i]=temp[i];
 	}
 }
+
+int[][] enterMatrix(){
+	int r,c;
+	cout<<"Enter matrix dimensions (Rows x Columns):"<<endl;
+	cin>>r>>c;
+	int matrix[r][c] = new int[r][c];
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			cout<<"Enter number for element "<<i+1<<", "<<j+1<<endl;
+			cin>>matrix[i][j];
+		}
+	}
+	return matrix;
+}*/
